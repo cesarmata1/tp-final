@@ -1,9 +1,12 @@
-const http = require('http');
+const http = require("http");
+
+const PORT = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.end('<h1>Mi app Node funciona 🚀</h1>');
+  res.writeHead(200, { "Content-Type": "text/html" });
+  res.end("<h1>Mi app Docker funciona 🚀</h1>");
 });
 
-const port = process.env.PORT || 3000;
-server.listen(port);
+server.listen(PORT, () => {
+  console.log(`Servidor en puerto ${PORT}`);
+});
